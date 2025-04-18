@@ -11,7 +11,7 @@ https://templatemo.com/tm-567-nomad-force
 -----------------------------------------*/
 :root {
   --white-color:                  #FFFFFF;
-  --primary-color:                #00B2C3;
+  --primary-color:                #334960;
   --section-bg-color:             #f9f9f9;
   --dark-color:                   #000000;
   --grey-color:                   #fcfeff;
@@ -242,12 +242,6 @@ strong {
   transform: translateY(10px);
 }
 
-.navbar-nav .nav-link:hover::after {
-  opacity: 1;
-  -webkit-transform: translateY(0px);
-  -moz-transform: translateY(0px);
-  transform: translateY(0px);
-}
 
 .navbar-nav .nav-link {
   color: var(--p-color);
@@ -257,13 +251,7 @@ strong {
 }
 
 .navbar-nav .nav-link:hover::after,
-.navbar-nav .nav-item.active .nav-link::after {
-  color: var(--primary-color);
-  opacity: 1;
-  -webkit-transform: translateY(0px);
-  -moz-transform: translateY(0px);
-  transform: translateY(0px);
-}
+
 
 .navbar-nav .nav-item.active .nav-link,
 .nav-link:focus, 
@@ -750,7 +738,7 @@ strong {
 }
 
 .gradient-text {
-  background-image: linear-gradient(to left top, #1A1F2B 0%, #00B2C3 100%);
+  background-image: linear-gradient(to left top, #000000 0%, #334960 100%);
   color: transparent;
   background-clip: text;
 }
