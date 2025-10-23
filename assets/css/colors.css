@@ -1,0 +1,115 @@
+/* NetOmega – minimal tokens */
+:root{
+  --accent: #3DB6DE;         /* brand */
+  --accent-hover: #2a94b8;
+
+  --bg: #ffffff;
+  --surface: #ffffff;
+
+  --text: #111827;           /* body text */
+  --muted: #4b5563;          /* secondary text */
+  --heading: var(--accent);  /* headings */
+  --border: #e5e7eb;
+}
+
+/* Auto dark mode */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#000704;
+    --surface:#1a2127;
+    --text:#f3f7fa;
+    --muted:#c7d0da;
+    --accent:#5fc8e7;
+    --accent-hover:#87d8ee;
+    --border:#26303a;
+  }
+}
+
+/* Base */
+body{background:var(--bg);color:var(--text) !important;}
+h1,h2,h3,h4,h5,h6{color:var(--heading);}
+a{color:var(--accent);} a:hover{color:var(--accent-hover);}
+p {
+  color: var(--text);
+  line-height: 1.6;
+}
+
+p.muted, .text-muted {
+  color: var(--muted);
+}
+
+
+/* Surfaces */
+.card,.surface{background:var(--surface);border:1px solid var(--border);border-radius:12px;}
+
+/* Bootstrap primary button mapped to brand */
+.btn-primary{
+  --bs-btn-bg:var(--accent);
+  --bs-btn-border-color:var(--accent);
+  --bs-btn-color:#fff;
+  --bs-btn-hover-bg:var(--accent-hover);
+  --bs-btn-hover-border-color:var(--accent-hover);
+  --bs-btn-focus-shadow-rgb:61,182,222; /* 3DB6DE */
+}
+
+/* Optional helpers */
+.text-muted{color:var(--muted)!important;}
+.border{border-color:var(--border)!important;}
+
+/* ==== Thème NetOmega ==== */
+:root{
+  --accent: #3DB6DE;
+  --accent-hover: #2BA1C9;
+  --heading: #0b2239;
+  --text: #111;
+}
+
+/* Carte avec liseré NetOmega */
+.netomega-card{
+  border-top: 4px solid var(--accent);
+  border-radius: 14px;
+}
+
+/* Asterisk “obligatoire” */
+.form-label.required::after{
+  content:" *";
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Champ focus aux couleurs de marque */
+.form-control:focus, .form-select:focus{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 .2rem rgba(61,182,222,.25);
+}
+
+/* Boutons Bootstrap mappés à la marque */
+.btn-primary{
+  --bs-btn-bg:var(--accent);
+  --bs-btn-border-color:var(--accent);
+  --bs-btn-color:#fff;
+  --bs-btn-hover-bg:var(--accent-hover);
+  --bs-btn-hover-border-color:var(--accent-hover);
+  --bs-btn-focus-shadow-rgb:61,182,222;
+}
+.btn-outline-primary{
+  --bs-btn-color: var(--accent);
+  --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--accent);
+  --bs-btn-hover-border-color: var(--accent);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--accent-hover);
+  --bs-btn-active-border-color: var(--accent-hover);
+  --bs-gradient: none;
+  transition: all .25s ease;
+}
+
+/* Petits raffinements */
+.text-accent{ color: var(--accent) !important; }
+.input-group-text{ background:#f7fbfd; color:#3b3b3b; }
+
+/* Réduction légère de l’espace vertical sur mobile */
+@media (max-width: 576px){
+  .card-body{ padding: 1.25rem; }
+}

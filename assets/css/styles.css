@@ -1,0 +1,326 @@
+
+/* NetOmega – minimal tokens */
+:root{
+  --accent: #3DB6DE;         /* brand */
+  --accent-hover: #2a94b8;
+
+  --bg: #ffffff;
+  --surface: #ffffff;
+
+  --text: #111827;           /* body text */
+  --muted: #4b5563;          /* secondary text */
+  --heading: var(--accent);  /* headings */
+  --border: #e5e7eb;
+}
+
+/* Auto dark mode */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#000704;
+    --surface:#1a2127;
+    --text:#f3f7fa;
+    --muted:#c7d0da;
+    --accent:#5fc8e7;
+    --accent-hover:#87d8ee;
+    --border:#26303a;
+  }
+}
+
+/* Base */
+body{background:var(--bg);color:var(--text) !important;}
+h1,h2,h3,h4,h5,h6{color:var(--heading);}
+a{color:var(--accent);} a:hover{color:var(--accent-hover);}
+p {
+  color: var(--text);
+  line-height: 1.6;
+}
+
+p.muted, .text-muted {
+  color: var(--muted);
+}
+
+
+/* Surfaces */
+.card,.surface{background:var(--surface);border:1px solid var(--border);border-radius:12px;}
+
+/* Bootstrap primary button mapped to brand */
+.btn-primary{
+  --bs-btn-bg:var(--accent);
+  --bs-btn-border-color:var(--accent);
+  --bs-btn-color:#fff;
+  --bs-btn-hover-bg:var(--accent-hover);
+  --bs-btn-hover-border-color:var(--accent-hover);
+  --bs-btn-focus-shadow-rgb:61,182,222; /* 3DB6DE */
+}
+/* Bootstrap outline button adapté à la marque NetOmega */
+.btn-outline-primary {
+  --bs-btn-color: var(--accent);
+  --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--accent);
+  --bs-btn-hover-border-color: var(--accent);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--accent-hover);
+  --bs-btn-active-border-color: var(--accent-hover);
+  --bs-btn-disabled-color: var(--accent);
+  --bs-btn-disabled-border-color: var(--accent);
+  --bs-gradient: none;
+  transition: all 0.3s ease;
+}
+
+/* Optional helpers */
+.text-muted{color:var(--muted)!important;}
+.border{border-color:var(--border)!important;}
+
+
+* {
+    box-sizing: border-box !important;
+    transition: ease all 0.5s;
+}
+
+img {
+      transition: ease all 0.5s;
+
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden !important;
+}
+
+/* Font settings */
+body {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    transition: all 0.4s ease-in-out;
+}
+
+p {
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: 0;
+    font-weight: normal;
+}
+
+ /* .header {
+    width: 100%;
+    background-image: url(../img/banner-bg.png);
+    background-repeat: no-repeat;
+    height: 100%;
+    padding-top: 27px;
+    padding-bottom: 25px;
+    background-size: 100%;
+    padding-bottom: 201px;
+}
+
+@media (max-width: 575px) {
+    .header {
+        background-size: cover;
+        padding-top: 15px;
+        padding-bottom: 90px;
+        background: #89cbeb;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .header {
+        background-size: cover;
+        padding-top: 15px;
+        padding-bottom: 90px;
+        background: #89cbeb;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .header {
+        padding-top: 15px;
+        padding-bottom: 120px;
+        background-size: cover;
+    }
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .header {
+        padding-top: 15px;
+        padding-bottom: 160px;
+        background-size: cover;
+    }
+
+
+} */
+
+.logo {
+    width: 150px;
+    font-family: "Lato", sans-serif;
+    font-weight: 900 !important;
+    font-style: italic;
+}
+
+.section {
+    margin: 70px 0px 0px 0px !important;
+}
+
+.section-title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    line-break: loose;
+    font-weight: bolder;
+}
+
+.section-description {
+    letter-spacing: 0;
+    line-break: loose;
+}
+
+.section-item {
+    margin-bottom: 50px;
+}
+
+.section-item-title {
+    letter-spacing: 0;
+    line-break: loose;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-size: large;
+}
+
+.section-item-description {
+    letter-spacing: 0;
+    line-break: loose;
+}
+
+/* Titre principal fluide (ex: section banner ou page) */
+.responsive-title {
+    font-size: clamp(1.8rem, 3vw + 1rem, 3.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Sous-titre fluide (ex: slogan ou paragraphe d’intro) */
+.responsive-subtitle {
+    font-size: clamp(1rem, 1.5vw + 0.8rem, 1.75rem);
+    font-weight: 500;
+    line-height: 1.6;
+    /* optionnel : teinte douce */
+}
+
+
+.atouts-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Fondu aux bords via mask (aucune dépendance au support du blur) */
+.atouts-marquee{
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 60px, #000 calc(100% - 60px), transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, #000 60px, #000 calc(100% - 60px), transparent 100%);
+}
+
+
+.atouts-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 3rem;
+  animation: scroll linear infinite;
+}
+
+
+.atout {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 0 0 auto;
+  font-weight: 600;
+  color: var(--muted) !important;
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+/* Pause au survol */
+.atouts-marquee:hover .atouts-track {
+  animation-play-state: paused;
+}
+
+.atouts-marquee:hover .atouts-track-inverse {
+  animation-play-state: paused;
+}
+
+/* Pause au survol — uniquement sur appareils qui supportent le hover */
+@media (hover: hover) and (pointer: fine) {
+  .atouts-marquee:hover .atouts-track,
+  .atouts-marquee:hover .atouts-track-inverse {
+    animation-play-state: paused;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .atouts-track {
+    gap: 1.5rem;
+    animation-duration: 40s;
+  }
+
+  .atout {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .atout i {
+    font-size: 1.1rem;
+  }
+}
+.atout:hover {
+  transform: scale(1.15);
+  color: var(--heading);
+  transition: transform 0.3s ease;
+}
+
+.logo { width: 140px; height: auto; color: var(--heading); }
+
+
+.logo-icon { width: 48px; height: 48px !important; color: var(--heading); }
+
+/* Bloc image + texte */
+
+/* clearfix pour empêcher les éléments suivants de remonter */
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+.z3 {
+  z-index: 3;
+}
+
+.z1 {
+  z-index: 1;
+}
+
